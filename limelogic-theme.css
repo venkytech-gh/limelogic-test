@@ -1,71 +1,181 @@
 :root {
-  --ll-bg: #f8faf5;
-  --ll-text: #284a34;
-  --ll-text-soft: #4f6656;
-  --ll-primary: #62a830;
-  --ll-primary-2: #87c943;
+  --ll-bg: #f6f9f2;
+  --ll-bg-2: #eef6e7;
+  --ll-text: #1f2b1f;
+  --ll-text-soft: #4c5a4c;
+  --ll-primary: #79c53b;
+  --ll-primary-2: #5faa2d;
+  --ll-wave-1: #d8ebc8;
+  --ll-wave-2: #c7e3b0;
+  --ll-outline: #d7d7d7;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: Manrope, sans-serif;
   background: var(--ll-bg);
+  color: var(--ll-text);
 }
 
 .ll-container {
-  width: 90%;
-  margin: auto;
+  width: min(1200px, 92%);
+  margin: 0 auto;
 }
 
 .ll-hero {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(180deg, #fbfdf8, #f4f8ef);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(186, 222, 146, 0.22), transparent 18%),
+    radial-gradient(circle at 88% 22%, rgba(159, 214, 95, 0.18), transparent 18%),
+    linear-gradient(180deg, #fbfdf8 0%, #f3f8ee 100%);
 }
 
 .ll-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 56px 0 140px;
+  position: relative;
+  z-index: 2;
 }
 
 .ll-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-weight: 800;
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 36px;
+}
+
+.ll-logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 210deg,
+    #4f9b2a 0deg 90deg,
+    #79c53b 90deg 180deg,
+    #a7d95a 180deg 270deg,
+    #6ab134 270deg 360deg
+  );
 }
 
 .ll-copy h1 {
-  font-size: 48px;
+  font-family: Poppins, sans-serif;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+  max-width: 760px;
+}
+
+.ll-copy p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--ll-text-soft);
+  max-width: 860px;
+  margin: 0 0 28px;
 }
 
 .ll-actions {
-  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .ll-btn {
-  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 30px;
   border-radius: 999px;
   text-decoration: none;
-  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.2s ease;
 }
 
 .ll-btn-primary {
   background: linear-gradient(135deg, var(--ll-primary), var(--ll-primary-2));
   color: white;
+  box-shadow: 0 10px 24px rgba(95, 170, 45, 0.22);
 }
 
 .ll-btn-secondary {
-  background: white;
-  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  color: #2b3b2b;
+  border: 1px solid var(--ll-outline);
+}
+
+.ll-mascot-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 520px;
+}
+
+.ll-mascot-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(174, 223, 92, 0.32) 0%, rgba(174, 223, 92, 0.08) 45%, transparent 70%);
+  filter: blur(10px);
 }
 
 .ll-mascot {
-  max-width: 100%;
+  position: relative;
+  z-index: 2;
+  max-width: 430px;
+  width: 100%;
+  height: auto;
 }
 
 .ll-wave {
   position: absolute;
+  left: 0;
   bottom: 0;
   width: 100%;
+  height: auto;
+  z-index: 1;
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .ll-hero-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 0 110px;
+    text-align: center;
+  }
+
+  .ll-logo {
+    justify-content: center;
+  }
+
+  .ll-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ll-actions {
+    justify-content: center;
+  }
+
+  .ll-mascot {
+    max-width: 300px;
+  }
+
+  .ll-mascot-wrap {
+    min-height: 340px;
+  }
 }
