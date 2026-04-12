@@ -1,13 +1,16 @@
 :root {
   --ll-bg: #f7fbf4;
-  --ll-bg-soft: #edf7e7;
-  --ll-bg-tint: #e4f2d8;
-  --ll-text: #2d5a3a;
-  --ll-text-soft: #5f6f60;
-  --ll-primary: #6fbc3d;
-  --ll-primary-dark: #58a32b;
-  --ll-card: #ffffff;
-  --ll-outline: #d9e6cf;
+  --ll-bg-top: #fbfdf8;
+  --ll-bg-bottom: #eef7e8;
+  --ll-text: #2e5a3d;
+  --ll-text-soft: #5b6e5f;
+  --ll-primary: #71bd3e;
+  --ll-primary-dark: #5ca430;
+  --ll-outline: #d9e7d1;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -17,47 +20,63 @@ body {
   color: var(--ll-text);
 }
 
-.ll-hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 78% 22%, rgba(167, 217, 90, 0.20), transparent 18%),
-    radial-gradient(circle at 18% 85%, rgba(196, 230, 160, 0.24), transparent 22%),
-    linear-gradient(180deg, #fbfdf8 0%, #eef7e8 100%);
+.ll-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
 }
 
-.ll-hero::before {
-  content: "";
-  position: absolute;
-  inset: auto -10% -8% -10%;
-  height: 340px;
+.ll-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 20% 60%, rgba(214, 236, 191, 0.9) 0%, rgba(214, 236, 191, 0) 60%),
-    radial-gradient(ellipse at 70% 60%, rgba(194, 228, 164, 0.85) 0%, rgba(194, 228, 164, 0) 60%);
+    radial-gradient(circle at 86% 20%, rgba(177, 224, 112, 0.18), transparent 16%),
+    radial-gradient(circle at 12% 82%, rgba(190, 228, 151, 0.15), transparent 18%),
+    linear-gradient(180deg, var(--ll-bg-top) 0%, var(--ll-bg-bottom) 100%);
+}
+
+.ll-bg-hill {
+  position: absolute;
+  right: -10%;
+  top: 18%;
+  width: 58%;
+  height: 68%;
+  background: radial-gradient(ellipse at center, rgba(214, 236, 191, 0.95) 0%, rgba(214, 236, 191, 0.45) 45%, rgba(214, 236, 191, 0) 72%);
   z-index: 0;
+  pointer-events: none;
+}
+
+.ll-bg-glow {
+  position: absolute;
+  right: 16%;
+  top: 28%;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(178, 223, 104, 0.20) 0%, rgba(178, 223, 104, 0.05) 45%, transparent 72%);
+  filter: blur(8px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .ll-hero-grid {
-  width: min(1180px, 92%);
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.02fr 0.98fr;
   align-items: center;
   gap: 40px;
   min-height: 100vh;
-  padding: 34px 0 120px;
-  position: relative;
-  z-index: 2;
+  padding: 34px 0 170px;
 }
 
 .ll-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 800;
   font-size: 18px;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
 }
 
 .ll-logo-mark {
@@ -75,35 +94,34 @@ body {
 
 .ll-copy h1 {
   font-family: "Poppins", sans-serif;
-  font-size: clamp(36px, 4.8vw, 62px);
-  line-height: 1.1;
+  font-size: clamp(38px, 4.8vw, 64px);
+  line-height: 1.08;
   letter-spacing: -0.03em;
-  margin: 0 0 20px;
-  max-width: 700px;
-  color: var(--ll-text);
   font-weight: 700;
+  margin: 0 0 22px;
+  max-width: 720px;
+  color: var(--ll-text);
 }
 
 .ll-copy p {
   font-size: 18px;
-  line-height: 1.65;
-  color: var(--ll-text-soft);
+  line-height: 1.7;
   max-width: 700px;
-  margin: 0 0 26px;
+  color: var(--ll-text-soft);
+  margin: 0 0 28px;
 }
 
 .ll-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 28px;
 }
 
 .ll-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 16px;
@@ -112,68 +130,53 @@ body {
 
 .ll-btn-primary {
   background: linear-gradient(135deg, var(--ll-primary), var(--ll-primary-dark));
-  color: white;
-  box-shadow: 0 10px 24px rgba(95, 170, 45, 0.18);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(103, 180, 58, 0.18);
 }
 
 .ll-btn-secondary {
   background: rgba(255, 255, 255, 0.82);
-  color: #345039;
+  color: #304c36;
   border: 1px solid var(--ll-outline);
-}
-
-.ll-feature-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  max-width: 640px;
-}
-
-.ll-feature-card {
-  background: rgba(255,255,255,0.92);
-  border: 1px solid #e4eddc;
-  border-radius: 18px;
-  padding: 18px 16px;
-  text-align: center;
-  box-shadow: 0 8px 30px rgba(83, 136, 52, 0.05);
-}
-
-.ll-feature-card strong {
-  display: block;
-  font-size: 15px;
-  color: #456245;
 }
 
 .ll-mascot-wrap {
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 520px;
-}
-
-.ll-mascot-glow {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(174, 223, 92, 0.26) 0%, rgba(174, 223, 92, 0.05) 50%, transparent 72%);
-  filter: blur(12px);
+  min-height: 560px;
 }
 
 .ll-mascot {
-  position: relative;
-  z-index: 2;
-  max-width: 390px;
-  width: 100%;
+  width: min(100%, 520px);
   height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 30px rgba(106, 177, 52, 0.10));
 }
 
-@media (max-width: 900px) {
+.ll-bottom-waves {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 320px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ll-bottom-waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 980px) {
   .ll-hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 30px 0 90px;
+    padding: 28px 0 150px;
   }
 
   .ll-logo {
@@ -189,16 +192,22 @@ body {
     justify-content: center;
   }
 
-  .ll-feature-strip {
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-  }
-
-  .ll-mascot {
-    max-width: 280px;
+  .ll-bg-hill {
+    right: -20%;
+    top: 42%;
+    width: 100%;
+    height: 48%;
   }
 
   .ll-mascot-wrap {
-    min-height: 320px;
+    min-height: 360px;
+  }
+
+  .ll-mascot {
+    width: min(100%, 320px);
+  }
+
+  .ll-bottom-waves {
+    height: 220px;
   }
 }
