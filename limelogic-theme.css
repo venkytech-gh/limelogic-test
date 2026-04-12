@@ -1,0 +1,71 @@
+:root {
+  --ll-bg: #f8faf5;
+  --ll-text: #284a34;
+  --ll-text-soft: #4f6656;
+  --ll-primary: #62a830;
+  --ll-primary-2: #87c943;
+}
+
+body {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  background: var(--ll-bg);
+}
+
+.ll-container {
+  width: 90%;
+  margin: auto;
+}
+
+.ll-hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fbfdf8, #f4f8ef);
+}
+
+.ll-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.ll-logo {
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.ll-copy h1 {
+  font-size: 48px;
+}
+
+.ll-actions {
+  margin-top: 20px;
+}
+
+.ll-btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.ll-btn-primary {
+  background: linear-gradient(135deg, var(--ll-primary), var(--ll-primary-2));
+  color: white;
+}
+
+.ll-btn-secondary {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.ll-mascot {
+  max-width: 100%;
+}
+
+.ll-wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
