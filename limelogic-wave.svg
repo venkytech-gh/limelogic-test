@@ -1,1 +1,108 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F8FBF6"/>
+      <stop offset="100%" stop-color="#EEF5E9"/>
+    </linearGradient>
 
+    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(1180 290) rotate(90) scale(270 420)">
+      <stop offset="0%" stop-color="#CBE8AE" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#CBE8AE" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowBottomLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(240 770) rotate(90) scale(220 500)">
+      <stop offset="0%" stop-color="#B9DA9F" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#B9DA9F" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="waveTop" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F3F8EE"/>
+      <stop offset="100%" stop-color="#EAF4E3"/>
+    </linearGradient>
+
+    <linearGradient id="waveMid" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E5F0DB"/>
+      <stop offset="100%" stop-color="#D7E8C8"/>
+    </linearGradient>
+
+    <linearGradient id="waveLower" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D5E8C4"/>
+      <stop offset="100%" stop-color="#C3DDB0"/>
+    </linearGradient>
+
+    <linearGradient id="waveFront" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#B8D69F"/>
+      <stop offset="100%" stop-color="#9FC685"/>
+    </linearGradient>
+
+    <filter id="blurSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+
+    <filter id="blurLight" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- base -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- soft ambient glows -->
+  <ellipse cx="1180" cy="290" rx="420" ry="270" fill="url(#glowRight)"/>
+  <ellipse cx="240" cy="770" rx="500" ry="220" fill="url(#glowBottomLeft)"/>
+
+  <!-- elegant upper sweep -->
+  <path
+    d="M1600 68C1495 118 1432 182 1366 246C1280 328 1183 374 1046 384C880 396 738 335 590 345C398 358 222 492 0 448V0H1600V68Z"
+    fill="url(#waveTop)"
+    fill-opacity="0.96"
+  />
+
+  <!-- center soft ribbon -->
+  <path
+    d="M0 470C148 435 286 455 435 523C586 593 722 634 882 621C1024 610 1144 544 1268 514C1390 485 1492 495 1600 540V900H0V470Z"
+    fill="url(#waveMid)"
+    fill-opacity="0.72"
+    filter="url(#blurSoft)"
+  />
+
+  <!-- lower wide wave -->
+  <path
+    d="M0 560C126 514 250 506 372 548C502 593 620 664 758 691C904 719 1026 704 1149 657C1288 603 1413 566 1600 584V900H0V560Z"
+    fill="url(#waveLower)"
+    fill-opacity="0.62"
+  />
+
+  <!-- white light ribbon -->
+  <path
+    d="M0 618C176 666 323 669 497 634C679 598 822 575 990 612C1162 649 1352 739 1600 706V900H0V618Z"
+    fill="#FFFFFF"
+    fill-opacity="0.32"
+    filter="url(#blurLight)"
+  />
+
+  <!-- front premium wave -->
+  <path
+    d="M0 705C127 674 283 675 436 731C597 791 760 838 956 828C1140 818 1289 744 1428 714C1492 701 1548 700 1600 707V900H0V705Z"
+    fill="url(#waveFront)"
+    fill-opacity="0.64"
+  />
+
+  <!-- final grounding wave -->
+  <path
+    d="M0 790C165 775 323 786 503 821C685 857 855 879 1048 862C1231 846 1408 793 1600 768V900H0V790Z"
+    fill="#8FBA76"
+    fill-opacity="0.28"
+  />
+
+  <!-- particles -->
+  <circle cx="1452" cy="138" r="11" fill="#E4F1D8" fill-opacity="0.9"/>
+  <circle cx="1496" cy="118" r="5" fill="#EFF7E9" fill-opacity="0.95"/>
+  <circle cx="1244" cy="302" r="7" fill="#EAF4E2" fill-opacity="0.85"/>
+  <circle cx="1018" cy="728" r="10" fill="#F8FCF5" fill-opacity="0.72"/>
+  <circle cx="1112" cy="742" r="6" fill="#F8FCF5" fill-opacity="0.68"/>
+  <circle cx="348" cy="758" r="8" fill="#F9FCF7" fill-opacity="0.78"/>
+  <circle cx="432" cy="735" r="5" fill="#F9FCF7" fill-opacity="0.68"/>
+</svg>
